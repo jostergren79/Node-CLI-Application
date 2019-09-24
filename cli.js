@@ -7,6 +7,11 @@ const Spotify = require('node-spotify-api');
 const moment = require("moment")
 const dotenv = require('dotenv').config()
 
+require("dotenv").config();
+const keys = require("./keys.js");
+const spotify = new Spotify(keys.spotify);
+
+
 //  liri captures the user input of song movie or concert user the process.argv index values of 2 and 3 
 
 const userInput1 = process.argv[2];
@@ -50,24 +55,8 @@ const omdb = function () {
 
 module.exports = spotify;
 
-// this is the omdb axios requirest that should return a movie object and console log the data
 
-
-const omdb = function () {
-    this.findMovie = function (movie) {
-        const URL2 = "http://www.omdbapi.com/?apikey=trilogy&" + movie;
-        axios.get(URL2)
-            .then(response => {
-                let data = response2.data
-                console.log(data)
-
-            });
-    };
-}
-
-module.exports = omdb;
-
-// this is the omdb axios requirest that should return a movie object and console log the data
+// this is the bandsintown axios request that should return a movie object and console log the data
 
 
 const bandsintown = function () {
