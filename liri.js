@@ -92,6 +92,24 @@ const omdbSearch = function (vData) {
         })
 };
 
+function doWhatevs () {
+
+    fs.readFile("random.txt", "utf8", function(error, data) {
+
+        if (error) {
+          return console.log(error);
+        }
+      
+        console.log(data);
+      
+        const dataArr = data.split(",");
+      
+        console.log(dataArr);
+      
+      });
+
+}
+
 // switch statment to process user input and respond
 
 function userEntry(cData, vData) {
@@ -106,9 +124,8 @@ function userEntry(cData, vData) {
             omdbSearch(vData);
             break;
         case "do-what-it-says":
-            // call function
+            doWhatevs ();
             break;
-            // call function
         default:
             console.log("Command not found")
             break;
